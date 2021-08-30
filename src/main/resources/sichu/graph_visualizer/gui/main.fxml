@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sichu.graph_visualizer.gui.MainController">
+    <opaqueInsets>
+        <Insets left="10.0" right="10.0" top="10.0" />
+    </opaqueInsets>
+   <children>
+   
+       <VBox prefWidth="200.0" spacing="5.0">
+           <VBox.margin>
+               <Insets />
+           </VBox.margin>
+           <padding>
+               <Insets left="10.0" right="10.0" top="10.0" />
+           </padding>
+      <children>
+              <Label text="Configure" />
+              <Separator prefWidth="200.0" />
+              <CheckBox fx:id="checkBoxWeighted" mnemonicParsing="false" text="Weighted" />
+              <CheckBox fx:id="checkBoxDirected" mnemonicParsing="false" text="Directed" />
+              <CheckBox fx:id="checkBoxConnected" mnemonicParsing="false" text="Connected" />
+              <Label text="Graph Type" />
+              <Separator prefWidth="200.0" />
+      
+              <RadioButton fx:id="radioBtnComplete" mnemonicParsing="false" text="Complete">
+                  <toggleGroup>
+                      <ToggleGroup fx:id="groupGraphType" />
+                  </toggleGroup>
+              </RadioButton>
+      
+              <RadioButton fx:id="radioBtnBipartite" mnemonicParsing="false" text="Complete Bipartite" toggleGroup="$groupGraphType" />
+              <RadioButton fx:id="radioBtnTripartite" mnemonicParsing="false" text="Complete Tripartite" toggleGroup="$groupGraphType" />
+              <RadioButton fx:id="radioBtnCyclic" mnemonicParsing="false" text="Cyclic" toggleGroup="$groupGraphType" />
+              <RadioButton fx:id="radioBtnTree" mnemonicParsing="false" text="Tree" toggleGroup="$groupGraphType" />
+              <RadioButton fx:id="radioBtnForest" mnemonicParsing="false" text="Forest" toggleGroup="$groupGraphType" />
+              <HBox fx:id="hBoxForestForm" alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+                 <children>
+                     <Label text="Trees in Forest:" />
+                     <TextField fx:id="textFieldTreesInForest" prefHeight="26.0" prefWidth="58.0" />
+                 </children>
+              </HBox>
+              <RadioButton fx:id="radioBtnGnm" mnemonicParsing="false" text="Gnm" toggleGroup="$groupGraphType" />
+      
+      
+              <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+         <children>
+                     <Label text="Vertices:" />
+                     <TextField fx:id="textFieldVertices" prefWidth="50.0" />
+         </children>
+              </HBox>
+              <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+                 <children>
+                     <Label text="Edges:" />
+                     <TextField fx:id="textFieldEdges" prefWidth="50.0" />
+                 </children>
+              </HBox>
+      </children>
+       </VBox>
+       <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+       <Label fx:id="labelMsg" alignment="CENTER" textAlignment="CENTER" />
+       <VBox alignment="CENTER" prefWidth="100.0" spacing="5.0">
+           <padding>
+               <Insets bottom="10.0" left="10.0" right="10.0" />
+           </padding>
+          <children>
+              <HBox alignment="CENTER" prefWidth="200.0" spacing="30.0">
+                 <children>
+                     <Button fx:id="btnExport" mnemonicParsing="false" text="Export" />
+                     <Button fx:id="btnGenerate" mnemonicParsing="false" text="Generate" />
+                 </children>
+              </HBox>
+              <CheckBox fx:id="automatic" mnemonicParsing="false" text="Auto Layout" />
+          </children>
+       </VBox>
+   </children>
+</VBox>
